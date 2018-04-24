@@ -1,1 +1,3 @@
 _site/
+.idea
+docker-compose.yml
