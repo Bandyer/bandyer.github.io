@@ -1,2 +1,36 @@
-theme: jekyll-theme-slate
-title: Bandyer Integration Basic
+# Theme settings
+doks:
+    baseurl:
+    color_theme: # Available themes: blue (default), green, purple, red and yellow
+    header:
+        logo:
+            text:
+            image: true
+    footer:
+        content:
+            logo:
+                text:
+                image: true
+            copyright: Copyright &copy; 2018. - Bandyer <br>All rights reserved.
+        social_list:
+            - network_name: facebook
+              profile_url: 'https://www.facebook.com/BandyerSrl/'
+            - network_name: twitter
+              profile_url: 'https://twitter.com/BandyerSrl'
+            - network_name: instagram
+              profile_url: 'https://www.instagram.com/bandyer/'
+            - network_name: linkedin
+              profile_url: 'https://www.linkedin.com/company-beta/6628654/'
+    google_analytics:
+        tracking_code: # Add your Google Analytics tracking code to activate Google Analytics
+
+# SASS settings
+sass:
+    sass_dir: ./doks-theme/_sass
+    style: :compressed
+
+# Jekyll settings
+layouts_dir: ./doks-theme/_layouts
+includes_dir: ./doks-theme/_includes
+exclude: [ 'README.md', 'CHANGELOG.md' ]
+permalink: /:title/
