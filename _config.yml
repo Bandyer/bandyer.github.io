@@ -8,7 +8,7 @@ doks:
             image: true
         nav:
             - item_name: Client SDK
-              item_url: client_sdk
+              item_url: /clientsdk
     footer:
         content:
             logo:

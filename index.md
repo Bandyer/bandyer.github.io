@@ -16,5 +16,5 @@ grid_navigation:
     - title: Client SDKs
       excerpt: SDK for Web, Android and iOS devices
       cta: Get started
-      url: client_sdk
+      url: /clientsdk
 ---
