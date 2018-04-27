@@ -6,6 +6,9 @@ doks:
         logo:
             text:
             image: true
+        nav:
+            - item_name: Client SDK
+              item_url: client_sdk
     footer:
         content:
             logo:
