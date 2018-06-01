@@ -4,8 +4,8 @@ doks:
     color_theme: # Available themes: blue (default), green, purple, red and yellow
     header:
         logo:
-            text:
-            image: true
+            text: Bandyer
+            image:
         nav:
             - item_name: Client SDK
               item_url: /clientsdk

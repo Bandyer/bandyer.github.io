@@ -78,10 +78,26 @@ In addition to the basic functionality above, the Bandyer platform provides a va
 screen-sharing, text chat, collaborative space, and more. 
 <!-- To see the complete set of features offered,see the developer guides. -->
 
-<!-- IMMAGINI DEL PUBLISH SUBSCRIBE -->
-<!-- DIRE CHE NEL WEB E' AUTOMATICO -->
+## Bandyer Communication Center
 
-### Vocabolary
+In addition to the possible integration of our technology within websites and mobile app, Bandyer makes available a new component that we will call **Communication Center**, to ease and speed-up the development process. The **Communication Center** allows the creation of a new channel that will facilitate the adoption of our technology within existing systems. 
+The **Communication Center** creates a configured channel to forward all calls notifications and alerts. The latter regard all calls activities made by users - using the integrated technology - such as calls invitations, alerts of busy users and so on.
+
+### What does the Communication Center do?
+
+It makes possible to identify the user status: online, offline or busy (if so with whom) and the user device. 
+The **Communication Center** allows to notify other systems such as by sending a message, a push notification or an email, after a predefined action is made by the user, or to forward the information to the correct receivers.
+Thanks to Bandyer Webhooks, the **Communication Center** can always show the real time users’ status, to update their presence on other systems: for instance, updating the presence on a CTI solution (Computer Telephony Integration).
+
+### What are the advantages of Bandyer Communication Center?
+
+With the Bandyer **Communication Center** sending information to users will become automatic: in real time the mobile app and the website will ring whenever users are placing or receiving calls. Furthermore, developers won’t stress anymore over the implementation and maintenance of a stable environment managing all possible scenarios such as: calls placed simultaneously, calls to busy users and rejection or acceptance of calls. 
+The **Communication Center** has been designed to offer a real-time communication channel with the benefit of a quick notification system, which works if users are either online or offline. In the latter, information must be forwarded by other means, such as emails, messages or notifications (GCM, APN).
+All these alerts allow to reproduce the process of a traditional phone call, by making the mobile phone ring even when the app is closed and the lock screen on, to assure a flawless communication channel considering all scenarios where the user is not “active”.
+Thanks to the continuous development and implementation of our **Communication Center**, the corporate will have a secure system to rely on, for all calls alerts and notifications.
+
+
+## Vocabolary
 
 **Call**
 
@@ -110,6 +126,13 @@ event can answer the call received.
 
 The decline concept is the *action of declining* a *Incoming Dial* received. The clients who receives the *Incoming Dial*
 event can decline the call received.
+
+---
+
+**Hang up**
+
+The hangup concept is the *action of hanging up* a *running call*. The one to one call will terminate at the first hangup action.
+Otherwise, the many to many call will continue when the clients remained are at least two.
 
 ---
 
@@ -149,5 +172,5 @@ in the call and listening for call events.
 **Bandyer REST API**
 
 The Bandyer REST API is an HTTP interface with the Bandyer Cloud used to create calls and handle advanced features
-such as archiving and broadcast. The Bandyer server SDKs implement many of the methods of the REST API. 
-Check out the REST API reference docs to learn the various methods available.
+such as archiving and broadcast. Check out the <a href="https://bandyer.com/assets/documentation/index.html" 
+target="_blank"> REST API reference docs</a> to learn the various methods available.

@@ -9,12 +9,16 @@ description: Build in-app voice and video with cloud infrastructure and powerful
 
 # Grid navigation
 grid_navigation:
-    - title: Video Chat Embed
+    - title: Basic concepts
       excerpt: Easily add basic video chat to your website and apps
-      cta: Get started
+      cta: Check it out
       url: basic
+    - title: Use cases
+      excerpt: Common use cases implemented with Bandyer solutions
+      cta: Check it out
+      url: /usecase
     - title: Client SDKs
       excerpt: SDK for Web, Android and iOS devices
-      cta: Get started
+      cta: Check it out
       url: /clientsdk
 ---
