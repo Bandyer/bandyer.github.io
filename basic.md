@@ -96,10 +96,64 @@ The **Communication Center** has been designed to offer a real-time communicatio
 All these alerts allow to reproduce the process of a traditional phone call, by making the mobile phone ring even when the app is closed and the lock screen on, to assure a flawless communication channel considering all scenarios where the user is not “active”.
 Thanks to the continuous development and implementation of our **Communication Center**, the corporate will have a secure system to rely on, for all calls alerts and notifications.
 
+### How Bandyer Communication Center works?
+
+The Bandyer **Communication Center** makes possible to create a [Call](#vocabolary_call) between two or more participants. The client who initiate the call is called
+*initiator*. The call *initiator* creates the call specifying the participants.
+
+Below there is example using pseudo-code of our SDKs (Web and Mobile).
+
+``` javascript 
+BandyerSDK.call(['usr_1234566789']);
+```
+Reference for call method for Mobile Sdk:
+<a href="https://bandyer.github.io/Bandyer-iOS-SDK/BandyerCommunicationCenter/Classes/BCXCallClient.html" target="blank">IOS</a>
+<a href="https://bandyer.github.io/Bandyer-Android-CommunicationCenter/jDoc/" target="blank">Android</a>
+
+Note: Web Call method is integrated in the widget chat and video chat.
+
+Once the call has been initialized, the callee user will receive the incoming call. He have two choiches: answer or decline.
+If the called user decide to **answer**, he will use the [answer method](#vocabolary_answer). Every user connected will receive a notification of the answered event.
+Once the user has answered the call, the call can begin. The user will connect to Bandyer [Call](#vocabolary_call) and will start to [publish](#vocabolary_publish) his stream and [subscribe](#vocabolary_subscribe) to others streams.
+
+``` javascript 
+BandyerSDK.call.answer();
+```
+Reference for call method for Mobile Sdk:
+<a href="https://bandyer.github.io/Bandyer-iOS-SDK/BandyerCommunicationCenter/Protocols/BCXCall.html#/c:objc(pl)BCXCall(im)answer" target="blank">IOS</a>
+<a href="https://bandyer.github.io/Bandyer-Android-CommunicationCenter/jDoc/" target="blank">Android</a>
+
+Note: Web Call method is integrated in the widget chat and video chat.
+
+The user can decide to decline the incoming call. In this case, he will use the [decline method](#vocabolary_decline).  Every user connected will receive a notification of the answered event. The user can also set a decline reason. The user who decline the call will not connect to Bandyer [Call](#vocabolary_call).
+
+``` javascript 
+BandyerSDK.call.decline();
+```
+Reference for call method for Mobile Sdk:
+<a href="https://bandyer.github.io/Bandyer-iOS-SDK/BandyerCommunicationCenter/Protocols/BCXCall.html#/c:objc(pl)BCXCall(im)decline" target="blank">IOS</a>
+<a href="https://bandyer.github.io/Bandyer-Android-CommunicationCenter/jDoc/" target="blank">Android</a>
+
+Note: Web Call method is integrated in the widget chat and video chat.
+
+There is another scenario: the user who receives the call neither answer nor decline. In this scenario, the Bandyer **Communication Center** will automatically hang up the call after 60 seconds. The caller will receive a notification of this event.
+
+Once the call is running and the users are connected, the users can call the [hangup method](#vocabolary_hangup) to terminate a call. If the call is a one to one call, the first hangup will close the call and the connection to the Bandyer **Communication Center**. If the call is many to many, the call will continue until the users connected are at least two.
+
+``` javascript 
+BandyerSDK.call.hangUp();
+```
+Reference for call method for Mobile Sdk:
+<a href="https://bandyer.github.io/Bandyer-iOS-SDK/BandyerCommunicationCenter/Protocols/BCXCall.html#/c:objc(pl)BCXCall(im)hangUp" target="blank">IOS</a>
+<a href="https://bandyer.github.io/Bandyer-Android-CommunicationCenter/jDoc/" target="blank">Android</a>
+
+Note: Web Call method is integrated in the widget chat and video chat.
+
 
 ## Vocabolary
 
 **Call**
+<a name="vocabolary_call"></a>
 
 You can think of a call as a "room" where clients can interact with one another in real-time. Clients can 
 publish streams and subscribe to streams in the call, as well as listen for events dispatched by the call 
@@ -108,6 +162,7 @@ publish streams and subscribe to streams in the call, as well as listen for even
 ---
 
 **Dial**
+<a name="vocabolary_dial"></a>
 
 The dial concept is the signaling process fired after a call request. When the client creates a call between another clients 
 (for example Client 2), every client receive a *Incoming Dial* event. After that, the clients can choose to answer 
@@ -116,6 +171,7 @@ The dial concept is the signaling process fired after a call request. When the c
 ---
 
 **Answer**
+<a name="vocabolary_answer"></a>
 
 The answer concept is the *action of answering* a *Incoming Dial* received. The clients who receives the *Incoming Dial*
 event can answer the call received.
@@ -123,13 +179,15 @@ event can answer the call received.
 ---
 
 **Decline**
+<a name="vocabolary_decline"></a>
 
 The decline concept is the *action of declining* a *Incoming Dial* received. The clients who receives the *Incoming Dial*
-event can decline the call received.
+event can decline the call received. The client can also set a reason among these options: none, error, do_not_disturb or no_answer.
 
 ---
 
 **Hang up**
+<a name="vocabolary_hangup"></a>
 
 The hangup concept is the *action of hanging up* a *running call*. The one to one call will terminate at the first hangup action.
 Otherwise, the many to many call will continue when the clients remained are at least two.
@@ -137,6 +195,7 @@ Otherwise, the many to many call will continue when the clients remained are at 
 ---
 
 **Publish**
+<a name="vocabolary_publish"></a>
 
 Once a client is connected to a call, it can publish an audio-video stream to the call using the device’s webcam
 and microphone.
@@ -144,6 +203,7 @@ and microphone.
 ---
 
 **Subscribe**
+<a name="vocabolary_subscribe"></a>
 
 Once a client is connected to a call, it can subscribe to any audio-video streams published by other clients
 in the call.
@@ -151,6 +211,7 @@ in the call.
 ---
 
 **Events**
+<a name="vocabolary_events"></a>
 
 Once a client establishes a connection to a call, it is able to listen for events dispatched by the call.
 Events are dispatched for a variety of reasons, such as a new stream being created or a new client connecting or
