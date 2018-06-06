@@ -13,7 +13,7 @@ grid_navigation:
     - title: Web SDK
       excerpt: Easily add basic video chat to your website and apps
       cta: Check it out
-      url: /basic
+      url: https://github.com/Bandyer/Bandyer-Chat-Widget
     - title: iOS SDK
       excerpt: > 
                The Bandyer iOS SDK lets you use Bandyer-powered video sessions in apps you build for iPad, iPhone, and 
