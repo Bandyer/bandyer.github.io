@@ -25,7 +25,7 @@ grid_navigation:
                The Bandyer Android SDK lets you use Bandyer-powered video sessions in apps you build for Android 
                devices.
       cta: Check it out
-      url: https://github.com/Bandyer/Bandyer-Android-CommunicationCenter
+      url: https://github.com/Bandyer/Bandyer-Android-SDK
 
 ---
 
